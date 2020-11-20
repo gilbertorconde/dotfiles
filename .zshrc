@@ -7,7 +7,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -73,7 +73,7 @@ plugins=(
   zsh-autosuggestions
   sudo
 )
-source $ZSH/oh-my-zsh.sh
+. $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -129,28 +129,18 @@ $HOME/.add-ssh-keys.sh
 
 # Alias:
 
-alias yaourt="yay"
-alias update="yaourt -Suyy --noconfirm"
-alias install="yaourt -S --noconfirm"
-alias remove="yaourt -Rcns"
-alias search="yaourt -Ss"
+alias update="yay -Suyy --noconfirm"
+alias install="yay -S --noconfirm"
+alias remove="yay -Rcns"
+alias search="yay -Ss"
 alias please='eval "sudo $(fc -ln -1)"'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-alias clip="xclip"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# nvm use --delete-prefix v11.1.0
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ "$GDMSESSION" = "gnome-i3" ] || [ "$GDMSESSION" = "i3" ] ; then
-    export GTK_CSD=0
-    export LD_PRELOAD="/usr/lib/libgtk3-nocsd.so.0"
-fi
 
 # Add a system description on terminal startup
 neofetch
@@ -160,9 +150,6 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # alias to edit this config file
 alias czsh="gedit $HOME/.zshrc &"
-
-# alias to edit i3Blocks
-alias ci3b="gedit $HOME/.config/i3/i3blocks/config &"
 
 # alias to edit sway
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
@@ -175,7 +162,7 @@ alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway"
 # python virtual env:
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dev
-source virtualenvwrapper.sh
+. virtualenvwrapper.sh
 
 # RAPPI VPNs ALIAS
 alias rappivpn-dev="sudo openfortivpn -c /etc/openfortivpn/rappiDev"
