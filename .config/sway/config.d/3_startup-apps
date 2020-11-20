@@ -1,0 +1,2 @@
+exec gammastep-indicator
+exec xrdb -load ~/.Xresources

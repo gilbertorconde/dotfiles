@@ -1,0 +1,197 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+for_window [class="^.*"] border none
+for_window [class="^.*"] default_border none
+for_window [app_id="^.*"] border none
+for_window [app_id="^.*"] default_border none
+
+gaps inner 4
+gaps outer 0
+
+input type:keyboard {
+    xkb_layout pt
+    xkb_options grp:win_space_toggle
+}
+
+seat seat0 xcursor_theme "Breeze"
+exec_always gsettings set org.gnome.desktop.interface cursor-theme "Breeze"
+
+font pango:Font Awesome 5 Free, Solid 13
+
+### Variables
+set $mod Mod4
+
+set $left Left
+set $down Down
+set $up Up
+set $right Right
+
+set $term alacritty
+
+# set $menu GDK_BACKEND=x11 ulauncher
+set $menu ulauncher
+
+### Output configuration
+# output eDP-1 scale 2.3
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+r reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    focus_wrapping force
+
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+h splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    bindsym $mod+tab layout toggle split tabbed
+    bindsym $mod+Control+tab layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Set colors
+set $bg-color            #444444
+set $inactive-bg-color   #444444
+set $text-color          #ededed
+set $inactive-text-color #888888
+set $urgent-bg-color     #e53935
+set $indicator-color     #FF0000
+
+
+# set window colors
+#                       border             background         text                 indicator		child_border
+client.focused          $bg-color          $bg-color          $text-color          $indicator-color	$bg-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color	$bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color	$bg-color
+client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color	$bg-color
+
+bindsym Ctrl+Shift+Print exec wf-recorder -g "$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.webm") --codec=vp8_vaapi  -d /dev/dri/renderD128
+bindsym Ctrl+Shift+BackSpace exec $HOME/.config/sway/kill-casts.sh
+bindsym $mod+Print exec $HOME/.config/sway/start-cast.sh
+bindsym $mod+Shift+Print exec $HOME/.config/sway/start-cast-v2.sh
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+
+bindsym $mod+e exec wlogout
+
+for_window [class="GParted"] floating enable
+for_window [app_id="zenity"] floating enable
+for_window [app_id="ulauncher"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [app_id="pavucontrol"] floating enable; resize shrink width 10000px; resize grow width 600px; resize shrink height 10000px; resize grow height 600px;
+
+include $HOME/.config/sway/config.d/*
+include /etc/sway/config.d/*

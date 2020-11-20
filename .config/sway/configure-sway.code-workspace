@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../waybar"
+		},
+		{
+			"path": "../alacritty"
+		},
+		{
+			"path": "../gammastep"
+		},
+		{
+			"path": "../mako"
+		}
+	],
+	"settings": {}
+}

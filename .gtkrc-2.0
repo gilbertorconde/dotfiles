@@ -1,0 +1,17 @@
+# -- THEME AUTO-WRITTEN DO NOT EDIT
+include "/usr/share/themes/Matcha-dark-azul/gtk-2.0/gtkrc"
+
+style "user-font" {
+	font_name = "Sans 11"
+}
+
+widget_class "*" style "user-font"
+
+gtk-font-name="Sans 11"
+
+include "/home/gil/.gtkrc.mine"
+
+gtk-cursor-theme-name="Breeze"
+gtk-cursor-theme-size=0
+
+# -- THEME AUTO-WRITTEN DO NOT EDIT

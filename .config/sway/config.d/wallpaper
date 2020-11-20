@@ -1,0 +1,12 @@
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output $OUTPUT1 bg $HOME/Pictures/wallpapers/b2VoMCY.png fill
+output $OUTPUT2 bg $HOME/Pictures/wallpapers/MwUb9E5.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
