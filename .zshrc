@@ -164,10 +164,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dev
 . virtualenvwrapper.sh
 
-# RAPPI VPNs ALIAS
-alias rappivpn-dev="sudo openfortivpn -c /etc/openfortivpn/rappiDev"
-alias rappivpn-prod="sudo openfortivpn -c /etc/openfortivpn/rappiProd"
-
+## my alias
+. $HOME/myalias
 
 powerline-daemon -q
 . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
