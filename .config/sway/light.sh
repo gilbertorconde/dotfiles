@@ -46,4 +46,4 @@ then
 fi
 FINAL="${SUM:0:$MIDLE - 3} $SPACER$PERCENTAGE% ${SUM:$MIDLE + 3:$MIDLE - 2}"
 # install from https://github.com/vlevit/notify-send.sh
-notify-send.sh --replace-file=/tmp/brightnessnotification -t 4000 "brightness" "[$FINAL]"
+notify-send.sh --replace-file=/tmp/brightnessnotification -t 4000 "Brightness" "[$FINAL]"
