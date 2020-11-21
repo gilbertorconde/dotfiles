@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+function lock() {
+    swaylock -c 000000 &
+} 
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        swaymsg exit
+        ;;
+    suspend)
+        lock && sleep 3 && dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Suspend" boolean:true
+        ;;
+    hibernate)
+        lock && sleep 3 && dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Hibernate" boolean:true
+        ;;
+    reboot)
+        dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Reboot" boolean:true
+        ;;
+    shutdown)
+        dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
