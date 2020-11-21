@@ -9,7 +9,7 @@ input 2:7:SynPS/2_Synaptics_TouchPad events disabled_on_external_mouse
 
 for_window [class="^.*"] border none
 for_window [class="^.*"] default_border none
-for_window [app_id="^.*"] border none
+for_window [appswaymsg _id="^.*"] border none
 for_window [app_id="^.*"] default_border none
 
 gaps inner 4
