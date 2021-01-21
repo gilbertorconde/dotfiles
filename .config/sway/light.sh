@@ -24,6 +24,8 @@ else
     fi
 fi
 
+echo "$(($ACTUAL_LIGHT + $STEP))"
+
 echo "$(($ACTUAL_LIGHT + $STEP))" > /sys/class/backlight/intel_backlight/brightness
 
 ACTUAL_LIGHT=`cat /sys/class/backlight/intel_backlight/actual_brightness`
