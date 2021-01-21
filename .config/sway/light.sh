@@ -1,5 +1,14 @@
 #! /bin/sh
 
+#
+# you need to add a udev rule like: /etc/udev/rules.d/backlight.rules with:
+#
+# ACTION=="change", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+# ACTION=="change", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+#
+# and then: sudo udevadm control --reload-rules && sudo udevadm trigger
+#
+
 DIRECTION=$1
 DEFAULT_STEP=50
 ACTUAL_LIGHT=`cat /sys/class/backlight/intel_backlight/actual_brightness`

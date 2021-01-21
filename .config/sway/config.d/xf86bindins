@@ -1,3 +1,12 @@
+#
+# you need to add a udev rule like: /etc/udev/rules.d/backlight.rules with:
+#
+# ACTION=="change", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+# ACTION=="change", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+#
+# and then: sudo udevadm control --reload-rules && sudo udevadm trigger
+#
+
 bindsym XF86MonBrightnessUp exec $HOME/.config/sway/light.sh up
 bindsym XF86MonBrightnessDown exec $HOME/.config/sway/light.sh down
 
