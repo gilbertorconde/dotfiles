@@ -28,7 +28,7 @@ set $down Down
 set $up Up
 set $right Right
 
-set $term alacritty
+set $term kitty
 
 # set $menu GDK_BACKEND=x11 ulauncher
 set $menu ulauncher
@@ -184,7 +184,7 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color	$bg-color
 
 # bindsym Ctrl+Shift+Print exec wf-recorder -g "$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.webm") --codec=vp8_vaapi  -d /dev/dri/renderD128
-Ctrl+Shift+Print exec optirun wf-recorder -g "$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4") --codec=libx264 -d /dev/dri/renderD128
+bindsym Ctrl+Shift+Print exec optirun wf-recorder -g "$(slurp)" -f ~/Videos/recording_$(date +"%Y-%m-%d_%H:%M:%S.mp4") --codec=libx264 -d /dev/dri/renderD128
 bindsym Ctrl+Shift+BackSpace exec $HOME/.config/sway/kill-casts.sh
 bindsym $mod+Print exec $HOME/.config/sway/start-cast.sh
 bindsym $mod+Shift+Print exec $HOME/.config/sway/start-cast-v2.sh
