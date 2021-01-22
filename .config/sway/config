@@ -10,7 +10,7 @@ for_window [class="^.*"] default_border none
 for_window [app_id="^.*"] border none
 for_window [app_id="^.*"] default_border none
 
-gaps inner 4
+gaps inner 8
 gaps outer 0
 
 input type:keyboard {

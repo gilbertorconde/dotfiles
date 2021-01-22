@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 640 640"
+   version="1.1"
+   id="svg368"
+   sodipodi:docname="volume-source.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07, custom)"
+   width="640"
+   height="640">
+  <metadata
+     id="metadata374">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs372" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview370"
+     showgrid="false"
+     inkscape:zoom="1.0545445"
+     inkscape:cx="321.10586"
+     inkscape:cy="308.73044"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg368" />
+  <path
+     d="m 320,416 c 53.02,0 96,-42.98 96,-96 V 160 c 0,-53.02 -42.98,-96 -96,-96 -53.02,0 -96,42.98 -96,96 v 160 c 0,53.02 42.98,96 96,96 z M 480,256 h -16 c -8.84,0 -16,7.16 -16,16 v 48 C 448,394.8 383.51,454.82 307.21,447.38 240.71,440.89 192,381.11 192,314.3 V 272 c 0,-8.84 -7.16,-16 -16,-16 h -16 c -8.84,0 -16,7.16 -16,16 v 40.16 c 0,89.64 63.97,169.55 152,181.69 V 528 h -56 c -8.84,0 -16,7.16 -16,16 v 16 c 0,8.84 7.16,16 16,16 h 160 c 8.84,0 16,-7.16 16,-16 v -16 c 0,-8.84 -7.16,-16 -16,-16 H 344 V 494.23 C 429.71,482.47 496,408.9 496,320 v -48 c 0,-8.84 -7.16,-16 -16,-16 z"
+     id="path366"
+     style="fill:#ffffff" />
+</svg>

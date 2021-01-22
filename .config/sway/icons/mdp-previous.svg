@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-inline--fa fa-fast-backward fa-w-16" width="670.72" height="670.72" aria-hidden="true" data-icon="fast-backward" data-prefix="fas" focusable="false" role="img" version="1.1" viewBox="0 0 670.72 670.72" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <filter id="filter633" x="-.16" y="-.15" width="1.31" height="1.33" color-interpolation-filters="sRGB">
+   <feFlood flood-color="rgb(0,0,0)" result="flood"/>
+   <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+   <feGaussianBlur in="composite1" result="blur" stdDeviation="35"/>
+   <feOffset dx="-0" dy="0" result="offset"/>
+   <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
+  </filter>
+ </defs>
+ <path d="m81.92 509.6v-360c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v151.9l171.5-156.5c20.6-17.1 52.5-2.8 52.5 24.6v131.9l171.5-156.5c20.6-17.1 52.5-2.8 52.5 24.6v320c0 27.4-31.9 41.7-52.5 24.6l-171.5-155.3v130.7c0 27.4-31.9 41.7-52.5 24.6l-171.5-155.3v150.7c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12z" fill="#fff" filter="url(#filter633)"/>
+</svg>
