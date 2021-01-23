@@ -1,12 +1,13 @@
 default-timeout=5000
-width=346
 border-size=0
 border-radius=4
 margin=16
 padding=8
 
 [category=XF86BINDING]
+width=351
 anchor=center
+background-color=#2e3440cc
 
 [category=XF86BINDING_MDP]
 background-color=#FFFFFF00
