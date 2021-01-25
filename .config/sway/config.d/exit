@@ -2,16 +2,16 @@
 # session
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/.config/sway/swayExit lock, mode "default"
-    bindsym e exec --no-startup-id ~/.config/sway/swayExit logout, mode "default"
-    bindsym s exec --no-startup-id ~/.config/sway/swayExit suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/sway/swayExit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/sway/swayExit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/.config/sway/swayExit shutdown, mode "default"
+    bindsym l exec --no-startup-id $HOME/.config/sway/swayExit lock, mode "default"
+    bindsym e exec --no-startup-id $HOME/.config/sway/swayExit logout, mode "default"
+    bindsym s exec --no-startup-id $HOME/.config/sway/swayExit suspend, mode "default"
+    bindsym h exec --no-startup-id $HOME/.config/sway/swayExit hibernate, mode "default"
+    bindsym r exec --no-startup-id $HOME/.config/sway/swayExit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $HOME/.config/sway/swayExit shutdown, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+l mode "$mode_system"
-bindsym $mod+l exec --no-startup-id ~/.config/sway/swayExit lock, mode "default"
+bindsym $mod+l exec --no-startup-id $HOME/.config/sway/swayExit lock, mode "default"

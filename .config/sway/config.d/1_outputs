@@ -7,9 +7,6 @@ set $OUTPUT2 HDMI-A-1
 output $OUTPUT1 scale 2 position 1920 0 res 3840x2160
 output $OUTPUT2 scale 1 position 0 0 res 1920x1080
 
-
-
-
 # display manager
 set $display_system Monitor (1): wide Vert, (2) wide Horiz, (3) Standard Vert, (4) Standard Horiz
 mode "$display_system" {
@@ -23,3 +20,8 @@ mode "$display_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+d mode "$display_system"
+
+# settings for when lid is closed/opened:
+bindswitch --reload --locked lid:on output $OUTPUT1 disable
+bindswitch --reload --locked lid:off output $OUTPUT1 enable
+exec_always $HOME/.config/sway/lid-reload.sh

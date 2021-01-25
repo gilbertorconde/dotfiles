@@ -9,6 +9,12 @@ plugins=(
 )
 . $ZSH/oh-my-zsh.sh
 
+# Configs for if using sway
+if [ "${XDG_SESSION_DESKTOP}" = "sway" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+    alias chrome="/opt/google/chrome/chrome --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
+fi
+
 
 # SSH:
 SSH_ENV="$HOME/.ssh/agent-environment"
@@ -47,7 +53,7 @@ alias please='eval "sudo $(fc -ln -1)"'
 alias czsh="gedit $HOME/.zshrc &"
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
 alias wsudo="sudo -E "
-alias sway-update="paru -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-git swaybg-git"
+alias sway-update="paru -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-effects-git swaybg-git"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --my-next-gpu-wont-be-nvidia"
 ## my alias:

@@ -1,5 +1,5 @@
 bindsym $mod+Shift+b exec /usr/bin/firefox
-bindsym $mod+b exec /opt/google/chrome/chrome
+bindsym $mod+b exec chrome
 bindsym $mod+c exec /usr/bin/code-oss --no-sandbox
 bindsym $mod+n exec "/usr/bin/nautilus"
 bindsym $mod+s exec "pavucontrol"
