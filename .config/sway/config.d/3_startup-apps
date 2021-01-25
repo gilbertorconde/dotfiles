@@ -1,2 +1,3 @@
 exec gammastep-indicator
 exec xrdb -load ~/.Xresources
+# exec /usr/bin/mkchromecast -t

@@ -38,15 +38,16 @@ $HOME/.add-ssh-keys.sh
 export EDITOR=nano
 
 # Alias:
-alias update="yay -Suyy --noconfirm"
-alias install="yay -S --noconfirm"
-alias remove="yay -Rcns"
-alias search="yay -Ss"
+alias yay="paru"
+alias update="paru -Suyy --noconfirm"
+alias install="paru -S --noconfirm"
+alias remove="paru -Rcns"
+alias search="paru -Ss"
 alias please='eval "sudo $(fc -ln -1)"'
 alias czsh="gedit $HOME/.zshrc &"
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
 alias wsudo="sudo -E "
-alias sway-update="yay -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-git swaybg-git"
+alias sway-update="paru -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-git swaybg-git"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --my-next-gpu-wont-be-nvidia"
 ## my alias:
