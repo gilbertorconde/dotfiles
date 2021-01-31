@@ -1,3 +1,4 @@
+background-color=#2e3440cc
 default-timeout=5000
 border-size=0
 border-radius=4
@@ -6,14 +7,12 @@ padding=8
 
 [category=XF86BINDING]
 width=351
+height=86
 anchor=center
-background-color=#2e3440cc
 
 [category=XF86BINDING_MDP]
-background-color=#FFFFFF00
-padding=0
 margin=0
-width=70
-height=70
+width=86
+height=86
 max-icon-size=70
 anchor=center

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg class="svg-inline--fa fa-play fa-w-14" width="665.63" height="665.63" aria-hidden="true" data-icon="play" data-prefix="fas" focusable="false" role="img" version="1.1" viewBox="0 0 665.63 665.63" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<svg class="svg-inline--fa fa-play fa-w-14" width="512.02" height="512.02" aria-hidden="true" data-icon="play" data-prefix="fas" focusable="false" role="img" version="1.1" viewBox="0 0 512.02 512.02" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
  <metadata>
   <rdf:RDF>
    <cc:Work rdf:about="">
@@ -9,14 +9,5 @@
    </cc:Work>
   </rdf:RDF>
  </metadata>
- <defs>
-  <filter id="filter483" x="-.2" y="-.16" width="1.36" height="1.3" color-interpolation-filters="sRGB">
-   <feFlood flood-color="rgb(0,0,0)" result="flood"/>
-   <feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
-   <feGaussianBlur in="composite1" result="blur" stdDeviation="35"/>
-   <feOffset dx="-0" dy="0" result="offset"/>
-   <feComposite in="SourceGraphic" in2="offset" result="composite2"/>
-  </filter>
- </defs>
- <path d="m542.18 296.59-352-208.1c-28.6-16.9-72.4-0.5-72.4 41.3v416.1c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="#fff" filter="url(#filter483)"/>
+ <path d="m456.42 214.67-352-208.1c-28.6-16.9-72.4-0.5-72.4 41.3v416.1c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="#fff"/>
 </svg>
