@@ -1,0 +1,14 @@
+#window {
+  background-color: transparent;
+  font-family: 'Fira Code';
+}
+
+#outer-box {
+  margin: 16px;
+  background-color: rgb(46, 52, 64);
+  border-radius: 8px;
+}
+
+#img {
+  margin-right: 10px;
+}

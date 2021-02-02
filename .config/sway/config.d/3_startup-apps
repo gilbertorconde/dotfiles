@@ -1,3 +1,5 @@
 exec gammastep-indicator
 exec xrdb -load ~/.Xresources
+exec blueman-applet
+exec_always flashfocus
 # exec /usr/bin/mkchromecast -t

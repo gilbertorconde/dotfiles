@@ -26,7 +26,8 @@
     set $term kitty
 
     # set $menu GDK_BACKEND=x11 ulauncher
-    set $menu ulauncher
+    # set $menu ulauncher
+    set $menu wofi
 
 ### Input configuration
     
@@ -56,6 +57,8 @@
     bindsym $mod+Return exec $term
     bindsym $mod+q kill
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $menu --show=run
+    bindsym Alt+Tab exec $HOME/.config/sway/window-switcher.sh
     floating_modifier $mod normal
     bindsym $mod+Shift+r reload
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -130,12 +133,8 @@
     bindsym $mod+Shift+Print exec $HOME/.config/sway/start-cast-v2.sh
     bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
-    for_window [class="GParted"] floating enable
-    for_window [app_id="zenity"] floating enable
-    for_window [app_id="ulauncher"] floating enable
-    for_window [class="Blueman-manager"] floating enable
-    for_window [app_id="pavucontrol"] floating enable; resize shrink width 10000px; resize grow width 600px; resize shrink height 10000px; resize grow height 600px;
-
+    # Tag xwayland windows as such
+	for_window [shell="xwayland"] title_format "<span>[X] %title</span>"
 
 ### include configurations
 

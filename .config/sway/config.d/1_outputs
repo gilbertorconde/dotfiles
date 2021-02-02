@@ -19,7 +19,7 @@ mode "$display_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+d mode "$display_system"
+bindsym $mod+m mode "$display_system"
 
 # settings for when lid is closed/opened:
 bindswitch --reload --locked lid:on output $OUTPUT1 disable
