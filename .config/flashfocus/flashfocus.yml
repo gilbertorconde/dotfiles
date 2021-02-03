@@ -3,9 +3,9 @@
 ## @@@@@@@@@@@@@@@@@@@@@@
 
 # Opacity of window during flash.
-flash-opacity: 0.7
+flash-opacity: 0.8
 default-opacity: 1
-time: 500
+time: 300
 simple: false
 ntimepoints: 20
 flash-on-focus: true
