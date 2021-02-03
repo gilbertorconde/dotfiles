@@ -1,3 +1,5 @@
+#!shellscript
+
 background-color=#2e3440cc
 default-timeout=5000
 border-size=0

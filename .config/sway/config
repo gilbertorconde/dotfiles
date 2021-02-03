@@ -1,3 +1,5 @@
+#!shellscript
+
 ### Basic style configuration
 
     for_window [class="^.*"] border none

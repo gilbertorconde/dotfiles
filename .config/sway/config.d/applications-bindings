@@ -1,3 +1,5 @@
+#!shellscript
+
 bindsym $mod+Shift+b exec /usr/bin/firefox
 bindsym $mod+b exec chrome
 bindsym $mod+c exec /usr/bin/code-oss --no-sandbox

@@ -1,3 +1,4 @@
+#!shellscript
 
 # session
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
