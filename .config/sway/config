@@ -134,6 +134,7 @@
     bindsym $mod+Print exec $HOME/.config/sway/start-cast.sh
     bindsym $mod+Shift+Print exec $HOME/.config/sway/start-cast-v2.sh
     bindsym Print exec grim -g "$(slurp)" - | wl-copy
+    bindsym Ctrl+Print exec grim - | wl-copy
 
     # Tag xwayland windows as such
 	for_window [shell="xwayland"] title_format "<span>[X] %title</span>"

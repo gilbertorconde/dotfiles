@@ -44,6 +44,7 @@ $HOME/.add-ssh-keys.sh
 export EDITOR=nano
 
 # Alias:
+# alias waybar="waybar --config $HOME/.config/waybar/config.json"
 alias yay="paru"
 alias update="paru -Suyy --noconfirm"
 alias install="paru -S --noconfirm"

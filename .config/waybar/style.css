@@ -17,6 +17,11 @@ window#waybar {
     background: transparent;
     color: white;
     border-bottom: 3px solid transparent;
+    opacity: 0.4;
+}
+
+#workspaces button.visible {
+    opacity: 1;
 }
 
 #workspaces button.focused {
@@ -26,6 +31,7 @@ window#waybar {
 
 #workspaces button.urgent {
     background: #9b3e3e;
+    opacity: 0.8;
     border-bottom: 3px solid rgb(255, 0, 0);
 }
 
