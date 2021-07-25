@@ -45,23 +45,22 @@ export EDITOR=nano
 
 # Alias:
 # alias waybar="waybar --config $HOME/.config/waybar/config.json"
-alias yay="paru"
-alias update="paru -Suyy --noconfirm"
-alias install="paru -S --noconfirm"
-alias remove="paru -Rcns"
-alias search="paru -Ss"
+alias update="yay -Suyy --noconfirm"
+alias install="yay -S --noconfirm"
+alias remove="yay -Rcns"
+alias search="yay -Ss"
 alias please='eval "sudo $(fc -ln -1)"'
 alias czsh="gedit $HOME/.zshrc &"
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
 alias wsudo="sudo -E "
-alias sway-update="paru -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-effects-git swaybg-git"
+alias sway-update="yay -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-effects-git swaybg-git"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --my-next-gpu-wont-be-nvidia"
 ## my alias:
 . $HOME/myalias
 
 # Path and envs
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM and local bin to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -100,3 +99,5 @@ load-nvmrc
 
 # Add a system description on terminal startup
 neofetch
+
+$HOME/Documents/samsung/check-samsung.sh
