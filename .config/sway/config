@@ -13,7 +13,7 @@
     font pango:Font Awesome 5 Free, Solid 13
 
     # set mouse cursor
-    seat seat0 xcursor_theme "Breeze"
+    seat seat0 xcursor_theme "Breeze" 24
     exec_always gsettings set org.gnome.desktop.interface cursor-theme "Breeze"
 
 ### Variables

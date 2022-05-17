@@ -37,8 +37,8 @@ else
     start_agent;
 fi
 
-# SSH KEYS:
-$HOME/.add-ssh-keys.sh
+# SSH KEYS: (with propper ~/.ssh/config this is no longer needed)
+# $HOME/.add-ssh-keys.sh
 
 # tty editor
 export EDITOR=nano
@@ -53,11 +53,9 @@ alias please='eval "sudo $(fc -ln -1)"'
 alias czsh="gedit $HOME/.zshrc &"
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
 alias wsudo="sudo -E "
-alias sway-update="yay -Sy --noconfirm swayidle-git wayland-protocols-git sway-git waybar-git wlroots-git swaylock-effects-git swaybg-git"
+alias sway-update="yay -Sy --noconfirm swayidle-git sway-git wlroots-git swaylock-effects-git swaybg-git"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --my-next-gpu-wont-be-nvidia"
-## my alias:
-. $HOME/myalias
+alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --unsupported-gpu"
 
 # Path and envs
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM and local bin to PATH for scripting
@@ -100,4 +98,6 @@ load-nvmrc
 # Add a system description on terminal startup
 neofetch
 
-$HOME/Documents/samsung/check-samsung.sh
+# $HOME/Documents/samsung/check-samsung.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
