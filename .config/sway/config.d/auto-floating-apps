@@ -16,6 +16,7 @@
 	for_window [app_id="(?i)mpv"] floating enable
 	for_window [app_id="(?i)thunar"] floating enable
 	for_window [app_id="tlp-ui"] floating enable
+	for_window [app_id="razergenie"] floating enable
 	for_window [app_id="pamac-manager"] floating enable
 	for_window [app_id="nm-connection-editor$"] floating enable
 	for_window [app_id="simple-scan"] floating enable
