@@ -28,3 +28,5 @@ bindsym $mod+XF86AudioMute exec $HOME/.config/sway/sound2.sh source toggle
 bindsym XF86AudioPlay exec $HOME/.config/sway/mdp-notifications.sh play
 bindsym XF86AudioNext exec $HOME/.config/sway/mdp-notifications.sh next
 bindsym XF86AudioPrev exec $HOME/.config/sway/mdp-notifications.sh previous
+
+bindsym $mod+F8 exec $HOME/.config/sway/switch-on-of-display.sh

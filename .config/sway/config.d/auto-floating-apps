@@ -11,7 +11,6 @@
   for_window [class="Blueman-manager"] floating enable
   for_window [app_id="pavucontrol"] floating enable; resize shrink width 10000px; resize grow width 600px; resize shrink height 10000px; resize grow height 600px;
 	for_window [app_id="system-config-printer"] floating enable
-	for_window [app_id="gnome-calculator"] floating enable
 	for_window [app_id="keepassxc"] floating enable
 	for_window [class="(?i)Lxappearance$"] floating enable
 	for_window [app_id="(?i)mpv"] floating enable
@@ -22,8 +21,8 @@
 	for_window [app_id="simple-scan"] floating enable
 	for_window [app_id="firetools"] floating enable
 	for_window [app_id="firewall-config"] floating enable
-	for_window [app_id="gnome-(calendar|calculator|power-statistics|control-center)"] floating enable
-	for_window [app_id="org.gnome.Weather"] floating enable
+	for_window [app_id="gnome-system-monitor"] floating enable
+	for_window [app_id="org.gnome.(Calendar|Calculator|Settings|Weather|clocks)"] floating enable
 	for_window [app_id="(pavucontrol|psensor)"] floating enable
 	for_window [app_id="soffice"] floating enable
 	for_window [title="^Open File$"] floating enable
