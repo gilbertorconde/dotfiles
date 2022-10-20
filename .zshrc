@@ -45,7 +45,7 @@ export EDITOR=nano
 
 # Alias:
 # alias waybar="waybar --config $HOME/.config/waybar/config.json"
-alias update="yay -Suyy --noconfirm"
+alias update="yay -Sy archlinux-keyring --noconfirm --needed && yay -Suyy --noconfirm"
 alias install="yay -S --noconfirm"
 alias remove="yay -Rcns"
 alias search="yay -Ss"
@@ -93,6 +93,10 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# ADD GO LANG TO PATH
+GOPATH=$HOME/go
+export PATH="$PATH:$HOME/go/bin"
 
 
 # Add a system description on terminal startup
