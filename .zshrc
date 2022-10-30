@@ -100,8 +100,15 @@ export PATH="$PATH:$HOME/go/bin"
 
 
 # Add a system description on terminal startup
-neofetch
+# neofetch
 
 # $HOME/Documents/samsung/check-samsung.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+fi
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
