@@ -111,4 +111,4 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 fi
 
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
