@@ -12,33 +12,13 @@ plugins=(
 # Configs for if using sway
 if [ "${XDG_SESSION_DESKTOP}" = "sway" ]; then
     export MOZ_ENABLE_WAYLAND=1
+    export XDG_CURRENT_DESKTOP="sway"
     alias chrome="/opt/google/chrome/chrome --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 fi
 
 
 # SSH:
-SSH_ENV="$HOME/.ssh/agent-environment"
-
-function start_agent {
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
-
-# Source SSH settings, if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
-
-# SSH KEYS: (with propper ~/.ssh/config this is no longer needed)
-# $HOME/.add-ssh-keys.sh
+# Moved to systemd service at ~/.config/systemd/user/ssh-agent.service
 
 # tty editor
 export EDITOR=nano
@@ -112,3 +92,14 @@ fi
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
+# source "$(npm root -g)/@hyperupcall/autoenv/activate.sh"
+
+# Pyenv environment variables
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# Pyenv initialization
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init --path)"
+fi
+
+
