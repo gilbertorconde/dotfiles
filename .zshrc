@@ -7,15 +7,26 @@ plugins=(
   zsh-autosuggestions
   sudo
 )
+
 . $ZSH/oh-my-zsh.sh
+
+
+. "/opt/asdf-vm/asdf.sh"
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 # Configs for if using sway
 if [ "${XDG_SESSION_DESKTOP}" = "sway" ]; then
-    export MOZ_ENABLE_WAYLAND=1
     export XDG_CURRENT_DESKTOP="sway"
-    alias chrome="/opt/google/chrome/chrome --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
 fi
 
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    export MOZ_ENABLE_WAYLAND=1
+    alias chrome="/opt/google/chrome/chrome --enable-features=UseOzonePlatform --enable-gpu --ozone-platform=wayland"
+fi
 
 # SSH:
 # Moved to systemd service at ~/.config/systemd/user/ssh-agent.service
@@ -33,73 +44,13 @@ alias please='eval "sudo $(fc -ln -1)"'
 alias czsh="gedit $HOME/.zshrc &"
 alias csway="/usr/bin/code-oss --new-window --file-uri $HOME/.config/sway/configure-sway.code-workspace &"
 alias wsudo="sudo -E "
-alias sway-update="yay -Sy --noconfirm swayidle-git sway-git wlroots-git swaylock-effects-git swaybg-git"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias sway="XDG_SESSION_DESKTOP=sway WLR_DRM_DEVICES=/dev/dri/card0 sway --unsupported-gpu"
 
-# Path and envs
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM and local bin to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# NVM
-## place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-# ADD GO LANG TO PATH
-GOPATH=$HOME/go
-export PATH="$PATH:$HOME/go/bin"
-
-
-# Add a system description on terminal startup
-# neofetch
-
-# $HOME/Documents/samsung/check-samsung.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-fi
-
+alias secondary-near-validator='ssh -o ProxyCommand="ssh -A -W %h:%p -v aws-validators-bastion" secondary-near-validator'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
 # source "$(npm root -g)/@hyperupcall/autoenv/activate.sh"
 
-# Pyenv environment variables
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-# Pyenv initialization
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init --path)"
-fi
 
-
+export PATH="$PATH:/home/gil/.foundry/bin"

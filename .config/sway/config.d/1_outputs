@@ -3,30 +3,35 @@
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 set $OUTPUT1 eDP-1
-set $OUTPUT2 HDMI-A-1
+# set $OUTPUT2 HDMI-A-1
+set $OUTPUT2 DP-5
 
 # default: (wide Vert)
-# output $OUTPUT1 scale 2.5 position 0 0 res 3840x2160
+# output $OUTPUT1 scale 2 position 0 0 res 3840x2160
 # output $OUTPUT2 scale 1 position 1920 0 res 2560x1080
-output $OUTPUT1 scale 2 position 0 0 res 3840x2160
-output $OUTPUT2 scale 1 position 1920 0 res 2560x1080
+
+# output $OUTPUT1 scale 2 position 0 0 res 3840x2160
+# output $OUTPUT2 scale 1 position 1920 0 res 2560x1080
+
+## ACER SCREEEN AT THE LEFT SIDE
+# output $OUTPUT2 scale 1 position 0 0 res 2560x1080
+# output $OUTPUT1 scale 2 position 1920 0 res 3840x2160
 
 # display manager
-set $display_system Monitor (1): wide Vert, (2) wide Horiz, (3) Standard Vert, (4) Standard Horiz
-mode "$display_system" {
-    bindsym 1 output $OUTPUT1 scale 2 position 0 1080 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 2560x1080, mode "default"
-    bindsym 2 output $OUTPUT1 scale 2 position 0 0 res 3840x2160, output $OUTPUT2 scale 1 position 1920 0 res 2560x1080, mode "default"
-    bindsym 3 output $OUTPUT1 scale 2 position 0 1080 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 1920x1080, mode "default"
-    bindsym 4 output $OUTPUT1 scale 2 position 1920 0 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 1920x1080, mode "default"
-    
-    
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+m mode "$display_system"
+# set $display_system Monitor (1): wide Vert, (2) wide Horiz, (3) Standard Vert, (4) Standard Horiz
+# mode "$display_system" {
+#     bindsym 1 output $OUTPUT1 scale 2 position 0 1080 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 2560x1080, mode "default"
+#     bindsym 2 output $OUTPUT1 scale 2 position 0 0 res 3840x2160, output $OUTPUT2 scale 1 position 1920 0 res 2560x1080, mode "default"
+#     bindsym 3 output $OUTPUT1 scale 2 position 0 1080 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 1920x1080, mode "default"
+#     bindsym 4 output $OUTPUT1 scale 2 position 1920 0 res 3840x2160, output $OUTPUT2 scale 1 position 0 0 res 1920x1080, mode "default"
+#
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+# bindsym $mod+m mode "$display_system"
 
 # settings for when lid is closed/opened:
 bindswitch --reload --locked lid:on output $OUTPUT1 disable
 bindswitch --reload --locked lid:off output $OUTPUT1 enable
 exec_always $HOME/.config/sway/lid-reload.sh
+exec_always kanshi
